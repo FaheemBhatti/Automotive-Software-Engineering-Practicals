@@ -1,0 +1,73 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Car ECU3 ECU2 ECU1
+
+
+BO_ 16 SoundMsg: 1 ECU3
+ SG_ Sound : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 9 LedMsg: 1 ECU2
+ SG_ Led : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 8 DoorLockMsg: 1 ECU3
+ SG_ DoorLock : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 7 ParkPilotMsg: 1 ECU3
+ SG_ ParkPilot : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 6 TVMsg: 1 ECU3
+ SG_ TV : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 5 LightAssistMsg: 1 ECU3
+ SG_ LightAssist : 0|1@1+ (1,0) [0|0] ""  Car
+
+BO_ 4 PlaySoundMsg: 1 ECU2
+ SG_ PlaySound : 0|1@1+ (1,0) [0|0] ""  ECU3
+
+BO_ 3 SeatBeltBuckledMsg: 1 ECU1
+ SG_ SeatBeltBuckled : 0|1@1+ (1,0) [0|0] ""  ECU2
+
+BO_ 2 SeatOccupiedMsg: 1 ECU1
+ SG_ SeatOccupied : 0|1@1+ (1,0) [0|0] ""  ECU2
+
+BO_ 1 SpeedMsg: 2 Car
+ SG_ Speed : 0|9@1+ (1,0) [0|0] ""  ECU3,ECU2
+
+
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "BusType" "CAN";
+

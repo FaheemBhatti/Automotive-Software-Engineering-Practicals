@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLING format-rev="2" prog-version="6.3.0" xmlns="http://www.tracetronic.de/xml/ecu-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tracetronic.de/xml/ecu-test tooling.xsd">
+	<TOOL-HOSTS>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="unicode">local</URL>
+			<BASE-PATH xsi:type="unicode">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+		<TOOL-HOST xsi:type="toolHost">
+			<URL xsi:type="unicode">local</URL>
+			<BASE-PATH xsi:type="unicode">&lt;workspace&gt;</BASE-PATH>
+		</TOOL-HOST>
+	</TOOL-HOSTS>
+	<TOOLS>
+		<TOOL id="VECTOR-HW01" xsi:type="tool">
+			<TOOL-HOST xsi:type="unicode">local</TOOL-HOST>
+			<TOOL-NAME xsi:type="unicode">VECTOR-HW</TOOL-NAME>
+			<START-OPTION xsi:type="integer">0</START-OPTION>
+			<START-PRIORITY xsi:type="integer">0</START-PRIORITY>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="hardware" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="unicode">Name: VN1610 SerialNumber: 29782 Capabilities: CAN (29782)</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</TOOL>
+	</TOOLS>
+	<PORTS>
+		<PORT format-rev="2" id="BUS-CAN01" toolId="VECTOR-HW01" xsi:type="port">
+			<PORT-TYPE-ID format-rev="1" xsi:type="toolcaps">
+				<REPRESENTATION xsi:type="integer">384</REPRESENTATION>
+			</PORT-TYPE-ID>
+			<IMPL-TYPE-ID xsi:type="unicode">CAN</IMPL-TYPE-ID>
+			<AUTOSTART xsi:type="integer">0</AUTOSTART>
+			<SETTINGS xsi:type="dynamicPropertySet">
+				<PROPERTY format-rev="1" name="busDb" propertyType="string" readonly="false" xsi:type="_property">
+					<VALUE xsi:type="unicode">ref:SUT</VALUE>
+				</PROPERTY>
+			</SETTINGS>
+		</PORT>
+	</PORTS>
+	<TOOL-DESCRIPTORS>
+		<TOOL-DESCRIPTOR dkey="VECTOR-HW01">
+			<DVALUE format-rev="2" xsi:type="toolDescriptor">
+				<TOOL-NAME xsi:type="unicode">VECTOR-HW</TOOL-NAME>
+				<PROVIDES>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="1" xsi:type="toolcaps">
+							<REPRESENTATION xsi:type="integer">384</REPRESENTATION>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">CAN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">VECTOR-HW-Zugriff auf CAN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">CAN_MANIP</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">VECTOR-HW-Manipulation auf CAN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">LIN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">VECTOR-HW-Zugriff auf LIN</DESCRIPTION>
+						</IMPL-TYPE>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">FLX</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">VECTOR-HW-Zugriff auf FLX</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="1" xsi:type="toolcaps">
+							<REPRESENTATION xsi:type="integer">64</REPRESENTATION>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">CAN</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">VECTOR-HW-Rohdiagnose</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+					<PORT-TYPE xsi:type="portImplInfo">
+						<PORT-TYPE-ID format-rev="1" xsi:type="toolcaps">
+							<REPRESENTATION xsi:type="integer">262144</REPRESENTATION>
+						</PORT-TYPE-ID>
+						<IMPL-TYPE xsi:type="implTypeDescriptor">
+							<IMPL-TYPE-ID xsi:type="unicode">CANWAY</IMPL-TYPE-ID>
+							<DESCRIPTION xsi:type="unicode">Ansteuerung der CANWAY-FIU über CAN</DESCRIPTION>
+						</IMPL-TYPE>
+					</PORT-TYPE>
+				</PROVIDES>
+				<START-PRIORITY-HINT xsi:type="integer">0</START-PRIORITY-HINT>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">hardware</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Hardware</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Wählen Sie hier die zu verwendende Hardware aus</DESCRIPTION>
+						<TYPE xsi:type="unicode">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">Name: VN1610 SerialNumber: 29782 Capabilities: CAN (29782)</ELEMENT>
+							<ELEMENT xsi:type="unicode">Name: Virtual CAN SerialNumber: 0 Capabilities: CAN (0)</ELEMENT>
+							<ELEMENT xsi:type="unicode">Eintrag &quot;ECU-TEST&quot; in Vector Hardware Config (-1)</ELEMENT>
+						</DOMAIN>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">Debug</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Debug</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<TYPE xsi:type="unicode">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">False</ELEMENT>
+							<ELEMENT xsi:type="unicode">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">False</DEFAULT>
+						<READONLY xsi:type="boolean">True</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet"/>
+			</DVALUE>
+		</TOOL-DESCRIPTOR>
+	</TOOL-DESCRIPTORS>
+	<PORT-DESCRIPTORS>
+		<PORT-DESCRIPTOR dkey="BUS-CAN01">
+			<DVALUE format-rev="1" xsi:type="portDescriptor">
+				<PORT-TYPE-ID format-rev="1" xsi:type="toolcaps">
+					<REPRESENTATION xsi:type="integer">384</REPRESENTATION>
+				</PORT-TYPE-ID>
+				<IMPL-TYPE-ID xsi:type="unicode">CAN</IMPL-TYPE-ID>
+				<BUS-TYPES>
+					<ELEMENT xsi:type="unicode">AccessActiveNode</ELEMENT>
+					<ELEMENT xsi:type="unicode">AccessMonitoring</ELEMENT>
+				</BUS-TYPES>
+				<PROPERTIES xsi:type="propertyDescriptorSet">
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">CtrlNumber</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Kontrollernummer</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Auswahl der Kontroller-Nummer wenn mehrere Kontroller des gleichen Typs vorhanden sind.</DESCRIPTION>
+						<TYPE xsi:type="unicode">string</TYPE>
+						<DEFAULT xsi:type="unicode">1</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">Bitrate</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Bitrate</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">0</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Bitrate</DESCRIPTION>
+						<TYPE xsi:type="unicode">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">10KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">20KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">50KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">83.33KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">100KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">125KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">250KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">500KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">800KB</ELEMENT>
+							<ELEMENT xsi:type="unicode">1000KB</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">500KB</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">TransferMode</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Modus</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Adressierungs-Modus (Standard = 11bit, Extended = 29bit)</DESCRIPTION>
+						<TYPE xsi:type="unicode">string</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">Standard</ELEMENT>
+							<ELEMENT xsi:type="unicode">Extended</ELEMENT>
+							<ELEMENT xsi:type="unicode">All</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">Standard</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">ListenMode</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Listen only</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Nur für CAN: Listen</DESCRIPTION>
+						<TYPE xsi:type="unicode">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">False</ELEMENT>
+							<ELEMENT xsi:type="unicode">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">ErrorMode</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Empfange Error-Frames</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Empfange auch Error-Frames</DESCRIPTION>
+						<TYPE xsi:type="unicode">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">False</ELEMENT>
+							<ELEMENT xsi:type="unicode">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">busDb</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Bus-DB</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">1</DISPLAY-LEVEL>
+						<TYPE xsi:type="unicode">string</TYPE>
+						<VALID-REFS>
+							<ELEMENT xsi:type="unicode">SUT</ELEMENT>
+						</VALID-REFS>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">ConfirmMode</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Sendebestätigung</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">5</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Aktiviert das bestätigte Senden. Bus-Schreiben-Testschritte und Sende-Tooljobs blockieren so lange, bis die Nachricht erfolgreich auf den Bus übertragen wurde oder der Confirm-Timeout abgelaufen ist.</DESCRIPTION>
+						<TYPE xsi:type="unicode">bool</TYPE>
+						<DOMAIN>
+							<ELEMENT xsi:type="unicode">False</ELEMENT>
+							<ELEMENT xsi:type="unicode">True</ELEMENT>
+						</DOMAIN>
+						<DEFAULT xsi:type="unicode">False</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+					<PROP xsi:type="propertyDescriptor">
+						<NAME xsi:type="unicode">ConfirmTimeout</NAME>
+						<DISPLAY-NAME xsi:type="unicode">Timeout für Sendebestätigung</DISPLAY-NAME>
+						<DISPLAY-LEVEL xsi:type="integer">5</DISPLAY-LEVEL>
+						<DESCRIPTION xsi:type="unicode">Dauer in Millisekunden binnen der die Nachricht erfolgreich versendet worden sein muss. Anderenfalls wird ein Fehler erzeugt. (darf nicht größer als 64535ms sein). Wird nur bei aktiviertem ConfirmMode verwendet.</DESCRIPTION>
+						<TYPE xsi:type="unicode">int</TYPE>
+						<DEFAULT xsi:type="unicode">30000</DEFAULT>
+						<READONLY xsi:type="boolean">False</READONLY>
+					</PROP>
+				</PROPERTIES>
+				<JOBS xsi:type="jobDescriptorSet">
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">InitFrame</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Registriert die Botschafts-ID für spätere Verwendung z.B. durch ReadFrame</DESCRIPTION>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">ReadFrame</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Liest die Botschaft mit der ID (vorher InitCanFrame notwendig!)</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="unicode">result</NAME>
+							<DESCRIPTION xsi:type="unicode">ByteStream</DESCRIPTION>
+							<TYPE xsi:type="unicode">ByteStream</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">ReadFrameEx</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Liest die Botschaft mit der ID (vorher InitCanFrame notwendig!)</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="unicode">result</NAME>
+							<DESCRIPTION xsi:type="unicode">CanFrame</DESCRIPTION>
+							<TYPE xsi:type="unicode">object</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB format-rev="2" xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">ClearFrame</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Löscht den Empfangspuffer der angegebenen Botschaft</DESCRIPTION>
+						<RETURN xsi:type="propertyDescriptor">
+							<NAME xsi:type="unicode">result</NAME>
+							<DESCRIPTION xsi:type="unicode">ByteStream</DESCRIPTION>
+							<TYPE xsi:type="unicode">ByteStream</TYPE>
+							<READONLY xsi:type="boolean">False</READONLY>
+						</RETURN>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">RegisterFrameForInbox</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">Inbox</NAME>
+								<DESCRIPTION xsi:type="unicode">Bestehende Inbox</DESCRIPTION>
+								<TYPE xsi:type="unicode">object</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">saveAsCanFrame</NAME>
+								<DESCRIPTION xsi:type="unicode">Wenn True wird das Frame als CanFrame-Objekt gespeichert, sonst als ByteStream</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">False</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Registriert ein Frame um in eine Inbox gestreamt zu werden. Nur mit dem Tool-Server möglich.</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">DeregisterFrameForInbox</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">Inbox</NAME>
+								<DESCRIPTION xsi:type="unicode">Bestehende Inbox</DESCRIPTION>
+								<TYPE xsi:type="unicode">object</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Deregistriert ein Frames das in die Inbox gestream wird</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">ResetFirstValue</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameName</NAME>
+								<DESCRIPTION xsi:type="unicode">Botschaftsname</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">SignalName</NAME>
+								<DESCRIPTION xsi:type="unicode">Signalname</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">NodeName</NAME>
+								<DESCRIPTION xsi:type="unicode">Name des Steuergeräts</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<DEFAULT xsi:type="unicode"/>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Löscht den ersten empfangenen Wert des angegebenen Signals</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">GetFirstValue</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameName</NAME>
+								<DESCRIPTION xsi:type="unicode">Botschaftsname</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">SignalName</NAME>
+								<DESCRIPTION xsi:type="unicode">Signalname</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">NodeName</NAME>
+								<DESCRIPTION xsi:type="unicode">Name des Steuergeräts</DESCRIPTION>
+								<TYPE xsi:type="unicode">string</TYPE>
+								<DEFAULT xsi:type="unicode"/>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">SendFrame</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">DataByteStream</NAME>
+								<DESCRIPTION xsi:type="unicode">zu sendende Daten</DESCRIPTION>
+								<TYPE xsi:type="unicode">ByteStream</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Sendet Botschaft mit angegebener ID und Daten</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">SendFrameCyclic</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">DataByteStream</NAME>
+								<DESCRIPTION xsi:type="unicode">zu sendende Daten</DESCRIPTION>
+								<TYPE xsi:type="unicode">ByteStream</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">Interval</NAME>
+								<DESCRIPTION xsi:type="unicode">Zykluszeit in ms</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">Count</NAME>
+								<DESCRIPTION xsi:type="unicode">Anzahl der Sendewiederholungen</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Zyklisches Senden einer Botschaft mit angegebener ID und Daten</DESCRIPTION>
+					</JOB>
+					<JOB xsi:type="jobDescriptor">
+						<NAME xsi:type="unicode">DisableSendFrameCyclic</NAME>
+						<PARAMETERS xsi:type="parameterDescriptorSet">
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">FrameId</NAME>
+								<DESCRIPTION xsi:type="unicode">ID der Botschaft</DESCRIPTION>
+								<TYPE xsi:type="unicode">int</TYPE>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+							<PARAM xsi:type="propertyDescriptor">
+								<NAME xsi:type="unicode">isExtended</NAME>
+								<DESCRIPTION xsi:type="unicode">Adressformat: True für 29 Bit, False für 11 Bit, None übernimmt die Einstellung &quot;Modus&quot; aus der Testbenchkonfiguration</DESCRIPTION>
+								<TYPE xsi:type="unicode">bool</TYPE>
+								<DOMAIN>
+									<ELEMENT xsi:type="unicode">False</ELEMENT>
+									<ELEMENT xsi:type="unicode">True</ELEMENT>
+								</DOMAIN>
+								<DEFAULT xsi:type="unicode">None</DEFAULT>
+								<READONLY xsi:type="boolean">False</READONLY>
+							</PARAM>
+						</PARAMETERS>
+						<DESCRIPTION xsi:type="unicode">Zyklisches Senden einer Botschaft mit angegebener ID deaktivieren</DESCRIPTION>
+					</JOB>
+				</JOBS>
+			</DVALUE>
+		</PORT-DESCRIPTOR>
+	</PORT-DESCRIPTORS>
+</TOOLING>

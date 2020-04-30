@@ -1,0 +1,142 @@
+1.	
+read()
+{
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+}
+
+
+Dialog("Don't sit on the chair, Unplug the seat belt and maintain the speed below 15kmph")
+	read();
+	if(a==0 && b==0 && c<=15 && d==0 && e==0 && f==1)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	
+
+2.	Dialog("Don't sit on the chair, Plug the seat belt and maintain the speed below 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==0 && b==1 && c<=15 && d==0 && e==0 && f==1)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	
+
+3.	Dialog("Sit on the chair, Unplug the seat belt and maintain the speed below 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==1 && b==0 && c<=15 && d==1 && e==0 && f==1)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
+
+4.	Dialog("Sit on the chair, Plug the seat belt and maintain the speed below 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==1 && b==1 && c<=15 && d==0 && e==0 && f==1)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
+
+5.	Dialog("Don't sit on the chair, Unplug the seat belt and maintain the speed above 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==0 && b==0 && c>15 && d==0 && e==0 && f==0)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
+
+6.	Dialog("Don't sit on the chair, Plug the seat belt and maintain the speed above 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==0 && b==1 && c>15 && d==0 && e==0 && f==0)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
+
+7.	Dialog("Sit on the chair, Unplug the seat belt and maintain the speed above 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==1 && b==0 && c>15 && d==1 && e==1 && f==0)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
+
+8.	Dialog("Sit on the chair, Plug the seat belt and maintain the speed above 15kmph")
+	a = CAN.read(Seat occupied)
+	b = CAN.read(Seat belt)
+	c = CAN.read(Current speed)
+	d = CAN.read(LED status)
+	e = CAN.read(Sound status)
+	f = CAN.read(TV Function)
+	if(a==1 && b==1 && c>15 && d==0 && e==0 && f==0)
+	{
+		Success
+	}
+	else
+	{
+		Failed
+	}
+	end if
