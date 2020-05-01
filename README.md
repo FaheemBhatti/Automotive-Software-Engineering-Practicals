@@ -14,3 +14,12 @@ Teamwork, Bus-System CAN
 AUTOSAR Application
 5. Unit (Test): 
 Black Box Test ECU, manual an automatic
+
+# Initial Steps
+To implement functions on the ECU, the "Raisonance Ride7" IDE is used. For flashing code to the board "Rflasher7" is used.
+The compiler must be started by opening "WindRiver -> Development Shell"
+[![Development Shell](https://github.com/FaheemBhatti/Automotive-Software-Engineering-Practicals/blob/master/Resources/Development%20Shell.JPG)
+
+#Unit 01
+
+
