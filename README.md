@@ -13,7 +13,7 @@ Teamwork, Bus-System CAN
 4. Unit(AUTOSAR):
 AUTOSAR Application
 5. Unit (Test): 
-Black Box Test ECU, manual an automatic
+Black Box Test ECU, manual and automatic
 
 # Initial Steps
 To implement functions on the ECU, the "Raisonance Ride7" IDE is used. For flashing code to the board "Rflasher7" is used.
